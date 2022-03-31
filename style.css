@@ -21,9 +21,9 @@ body {
 } */
 
 .calculator {
-  background-color: rgb(221, 221, 221);
-  border: black solid 5px;
-  box-shadow: black 3px 3px;
+  background-color: rgb(122, 122, 122);
+  border: #161616 solid 5px;
+  box-shadow: #161616 3px 3px;
 }
 
 .display {
@@ -35,6 +35,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: end;
+  border: solid #161616 4px;
 }
 
 .display p {
@@ -58,23 +59,41 @@ body {
 
 button {
   font-size: 30px;
-  background-color: white;
-  border: black solid 4px;
-  box-shadow: black 0px 3px;
+  background-color: rgb(63, 63, 63);
+  color: white;
+  border: #161616 solid 4px;
+  box-shadow: #161616 0px 3px;
   transition: ease-out 0.3s;
   height: 100px;
   width: 100px;
 }
 
+.clear-button {
+  background-color: rgb(212, 83, 51);
+}
+
+.clear-button:hover {
+  background-color: rgb(138, 45, 22);
+}
+
+.result-button {
+  background-color: rgb(57, 99, 177);
+}
+
+.result-button:hover {
+  background-color: rgb(39, 69, 124);
+}
+
 button:hover {
   cursor: pointer;
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(44, 44, 44);
 }
 
 img {
   height: 50px;
   width: 50px;
   margin: 3px;
+  filter: invert(100%);
 }
 
 .flex-button {
