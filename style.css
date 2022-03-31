@@ -2,8 +2,11 @@
 
 * {
   font-family: "Shippori Antique B1", sans-serif;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
-/* 
+
 body {
   display: flex;
   align-items: center;
@@ -11,8 +14,71 @@ body {
   height: 100vh;
 }
 
-p {
+/* p {
   padding: 5px;
   border: black solid 3px;
   box-shadow: black 3px 3px;
 } */
+
+.calculator {
+  background-color: rgb(221, 221, 221);
+  border: black solid 5px;
+  box-shadow: black 3px 3px;
+}
+
+.display {
+  background-color: #557262;
+  grid-column: span 4;
+  width: auto;
+  height: 100px;
+  box-shadow: inset #34463c 5px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.display p {
+  color: #212c26;
+  font-size: 60px;
+  padding: 10px;
+  font-family: monospace;
+}
+
+.buttons {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 10px;
+}
+
+.grid-col-span-2 {
+  grid-column: span 2;
+  width: auto;
+}
+
+button {
+  font-size: 30px;
+  background-color: white;
+  border: black solid 4px;
+  box-shadow: black 0px 3px;
+  transition: ease-out 0.3s;
+  height: 100px;
+  width: 100px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(212, 212, 212);
+}
+
+img {
+  height: 50px;
+  width: 50px;
+  margin: 3px;
+}
+
+.flex-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
