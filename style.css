@@ -14,12 +14,6 @@ body {
   height: 100vh;
 }
 
-/* p {
-  padding: 5px;
-  border: black solid 3px;
-  box-shadow: black 3px 3px;
-} */
-
 .calculator {
   background-color: rgb(122, 122, 122);
   border: #161616 solid 5px;
