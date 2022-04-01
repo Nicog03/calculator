@@ -57,30 +57,50 @@ button {
   color: white;
   border: #161616 solid 4px;
   box-shadow: #161616 0px 3px;
-  transition: ease-out 0.3s;
+  transition: ease-out 0.1s;
   height: 100px;
   width: 100px;
 }
+
+/* -------------------------------Clear button section------------------------------------ */
 
 .clear-button {
   background-color: rgb(212, 83, 51);
 }
 
 .clear-button:hover {
-  background-color: rgb(138, 45, 22);
+  background-color: rgb(182, 59, 28);
 }
 
+.clear-button:active {
+  background-color: rgb(155, 53, 25);
+}
+
+/* -------------------------------Result button section------------------------------------ */
+
 .result-button {
-  background-color: rgb(57, 99, 177);
+  background-color: #d3ab29;
 }
 
 .result-button:hover {
-  background-color: rgb(39, 69, 124);
+  background-color: #a88921;
 }
+
+.result-button:active {
+  background-color: #88701f;
+}
+
+/* -------------------------------Overall buttons section------------------------------------ */
 
 button:hover {
   cursor: pointer;
   background-color: rgb(44, 44, 44);
+}
+
+button:active {
+  cursor: pointer;
+  background-color: rgb(29, 29, 29);
+  box-shadow: none;
 }
 
 img {
