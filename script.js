@@ -11,6 +11,8 @@ function clearDisplay() {
     display.textContent = '';
 }
 
+//backspace button.
 backspace.addEventListener('click', () => {
+    //removes the last character of the display array. 
     display.textContent = display.textContent.slice(0, display.textContent.length -1);
 })
