@@ -14,7 +14,8 @@ const sevenNum = document.getElementById('sevenNum');
 const eightNum = document.getElementById('eightNum');
 const nineNum = document.getElementById('nineNum');
 
-const plusButton = document.getElementById('plus-button');
+const addButton = document.getElementById('plus-button');
+const subtractButton = document.getElementById('subtract-button');
 const resultButton = document.querySelector('.result-button');
 
 //adds a click listener to the 'Clear' button
@@ -62,13 +63,40 @@ nineNum.onclick = () => {
     display.textContent = display.textContent + 9
 };
 
-plusButton.onclick = () => {
+addButton.onclick = () => {
+    if (display.textContent.includes('-')) {
+        let firstNumber = display.textContent.slice(0, display.textContent.indexOf('-'))
+        let secondNumber = display.textContent.slice(display.textContent.indexOf('-') + 1)
+        
+        display.textContent = firstNumber - secondNumber;
+    }
+
     if(!display.textContent.includes('+')){
         display.textContent = display.textContent + '+'
     }
 };
 
+subtractButton.onclick = () => {
+    if (display.textContent.includes('+')) {
+        let firstNumber = +display.textContent.slice(0, display.textContent.indexOf('+'));
+        let secondNumber = +display.textContent.slice(display.textContent.indexOf('+') + 1);
+
+        display.textContent = firstNumber + secondNumber;
+    }
+
+    if(!display.textContent.includes('-')){
+        display.textContent = display.textContent + '-'
+    }
+};
+
 resultButton.onclick = () => {
+
+    if (display.textContent.includes('-')) {
+        let firstNumber = +display.textContent.slice(0, display.textContent.indexOf('-'));
+        let secondNumber = +display.textContent.slice(display.textContent.indexOf('-') + 1);
+        
+        display.textContent = firstNumber - secondNumber;
+    }
 
     if(display.textContent.includes('+')) {
     let firstNumber = +display.textContent.slice(0, display.textContent.indexOf('+'));
