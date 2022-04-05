@@ -77,15 +77,43 @@ multiplyButton.onclick = () => {
     }
 }
 
+//======When you click the plus character======
 addButton.onclick = () => {
+    //if the display already contains a division character, 
+    //it'll resolve it first, and the add the plus sign.
+    if (display.textContent.includes('÷')) {
+        let firstNumber = display.textContent.slice(0, display.textContent.indexOf('÷'));
+        let secondNumber = display.textContent.slice(display.textContent.indexOf('÷') + 1);
+        display.textContent = firstNumber / secondNumber;
+    }
+
+    //if the display already contains a multiply character, 
+    //it'll resolve it first, and the add the plus sign.
+    if (display.textContent.includes('x')) {
+        let firstNumber = display.textContent.slice(0, display.textContent.indexOf('x'));
+        let secondNumber = display.textContent.slice(display.textContent.indexOf('x') + 1);
+        display.textContent = firstNumber * secondNumber;
+    }
+
+    //if the display already contains a plus sign, 
+    //it'll resolve it first, and the add another plus sign.
+    if (display.textContent.includes('+')) {
+        let firstNumber = +display.textContent.slice(0, display.textContent.indexOf('+'))
+        let secondNumber = +display.textContent.slice(display.textContent.indexOf('+') + 1)
+        display.textContent = firstNumber + secondNumber;
+    }
+
+    //if the display already contains a subtraction character, 
+    //it'll resolve it first, and the add the plus sign.
     if (display.textContent.includes('-')) {
         let firstNumber = display.textContent.slice(0, display.textContent.indexOf('-'))
         let secondNumber = display.textContent.slice(display.textContent.indexOf('-') + 1)
-        
         display.textContent = firstNumber - secondNumber;
     }
 
-    if(!display.textContent.includes('+')){
+    //it'll add a plus sign to the display array, but only 
+    // if the last character of the array is different from a plus sign.
+    if (display.textContent.charAt(display.textContent.length - 1) != '+'){
         display.textContent = display.textContent + '+'
     }
 };
@@ -127,7 +155,7 @@ resultButton.onclick = () => {
     if(display.textContent.includes('+')) {
     let firstNumber = +display.textContent.slice(0, display.textContent.indexOf('+'));
     let secondNumber = +display.textContent.slice(display.textContent.indexOf('+') + 1);
-    
+
     display.textContent = firstNumber + secondNumber;
     }
 }
