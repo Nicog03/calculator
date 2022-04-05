@@ -14,6 +14,7 @@ const sevenNum = document.getElementById('sevenNum');
 const eightNum = document.getElementById('eightNum');
 const nineNum = document.getElementById('nineNum');
 
+const divideButton = document.getElementById('divide-button');
 const addButton = document.getElementById('plus-button');
 const subtractButton = document.getElementById('subtract-button');
 const resultButton = document.querySelector('.result-button');
@@ -63,6 +64,10 @@ nineNum.onclick = () => {
     display.textContent = display.textContent + 9
 };
 
+divideButton.onclick = () => {
+    display.textContent = display.textContent + '÷';
+}
+
 addButton.onclick = () => {
     if (display.textContent.includes('-')) {
         let firstNumber = display.textContent.slice(0, display.textContent.indexOf('-'))
@@ -80,7 +85,6 @@ subtractButton.onclick = () => {
     if (display.textContent.includes('+')) {
         let firstNumber = +display.textContent.slice(0, display.textContent.indexOf('+'));
         let secondNumber = +display.textContent.slice(display.textContent.indexOf('+') + 1);
-
         display.textContent = firstNumber + secondNumber;
     }
 
@@ -91,10 +95,16 @@ subtractButton.onclick = () => {
 
 resultButton.onclick = () => {
 
+    if (display.textContent.includes('÷')) {
+        let firstNumber = +display.textContent.slice(0, display.textContent.indexOf('÷'));
+        let secondNumber = +display.textContent.slice(display.textContent.indexOf('÷') + 1);
+
+        display.textContent = firstNumber / secondNumber;
+    }
+
     if (display.textContent.includes('-')) {
         let firstNumber = +display.textContent.slice(0, display.textContent.indexOf('-'));
         let secondNumber = +display.textContent.slice(display.textContent.indexOf('-') + 1);
-        
         display.textContent = firstNumber - secondNumber;
     }
 
