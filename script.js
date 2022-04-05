@@ -103,7 +103,7 @@ addButton.onclick = () => {
         display.textContent = firstNumber + secondNumber;
     }
 
-    //if the display already contains a subtraction character, 
+    //if the display already contains a minus character, 
     //it'll resolve it first, and the add the plus sign.
     if (display.textContent.includes('-')) {
         let firstNumber = display.textContent.slice(0, display.textContent.indexOf('-'))
@@ -118,13 +118,42 @@ addButton.onclick = () => {
     }
 };
 
+//======When you click the minus character=====
 subtractButton.onclick = () => {
+     //if the display already contains a division character, 
+    //it'll resolve it first, and the add the minus sign.
+    if (display.textContent.includes('÷')) {
+        let firstNumber = display.textContent.slice(0, display.textContent.indexOf('÷'));
+        let secondNumber = display.textContent.slice(display.textContent.indexOf('÷') + 1);
+        display.textContent = firstNumber / secondNumber;
+    }
+
+    //if the display already contains a multiply character, 
+    //it'll resolve it first, and the add the minus sign.
+    if (display.textContent.includes('x')) {
+        let firstNumber = display.textContent.slice(0, display.textContent.indexOf('x'));
+        let secondNumber = display.textContent.slice(display.textContent.indexOf('x') + 1);
+        display.textContent = firstNumber * secondNumber;
+    }
+
+    //if the display already contains a plus character, 
+    //it'll resolve it first, and the add the minus sign.
     if (display.textContent.includes('+')) {
         let firstNumber = +display.textContent.slice(0, display.textContent.indexOf('+'));
         let secondNumber = +display.textContent.slice(display.textContent.indexOf('+') + 1);
         display.textContent = firstNumber + secondNumber;
     }
 
+    //if the display already contains a minus character, 
+    //it'll resolve it first, and the add another minus character.
+    if (display.textContent.includes('-')) {
+        let firstNumber = display.textContent.slice(0, display.textContent.indexOf('-'))
+        let secondNumber = display.textContent.slice(display.textContent.indexOf('-') + 1)
+        display.textContent = firstNumber - secondNumber;
+    }
+
+    //it'll add the minus character to the display string
+    // but only if the last cahracter of the array is not not a minus character.
     if(!display.textContent.includes('-')){
         display.textContent = display.textContent + '-'
     }
