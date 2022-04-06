@@ -20,6 +20,7 @@ const addButton = document.getElementById('plus-button');
 const subtractButton = document.getElementById('subtract-button');
 const resultButton = document.querySelector('.result-button');
 
+
 //adds a click listener to the 'Clear' button
 clearButton.addEventListener('click', clearDisplay);
 
@@ -65,10 +66,46 @@ nineNum.onclick = () => {
     display.textContent = display.textContent + 9
 };
 
+//======When you click the multiply button======
 divideButton.onclick = () => {
-    if (!display.textContent.includes('÷')) {
+    
+    //if the display already contains a division character,
+    //it'll resolve it first, and then add another division character.
+    if (display.textContent.includes('÷')) {
+        let firstNumber = display.textContent.slice(0, display.textContent.indexOf('÷'));
+        let secondNumber = display.textContent.slice(display.textContent.indexOf('÷') + 1);
+        display.textContent = firstNumber / secondNumber;
+    }
+
+    //if the display already contains a multiply character, 
+    //it'll resolve it first, and then add the division sign.
+    if (display.textContent.includes('x')) {
+        let firstNumber = display.textContent.slice(0, display.textContent.indexOf('x'));
+        let secondNumber = display.textContent.slice(display.textContent.indexOf('x') + 1);
+        display.textContent = firstNumber * secondNumber;
+    }
+
+    //if the display already contains a plus sign, 
+    //it'll resolve it first, and then add division character.
+    if (display.textContent.includes('+')) {
+        let firstNumber = +display.textContent.slice(0, display.textContent.indexOf('+'))
+        let secondNumber = +display.textContent.slice(display.textContent.indexOf('+') + 1)
+        display.textContent = firstNumber + secondNumber;
+    }
+
+    //if the display already contains a minus character, 
+    //it'll resolve it first, and then add the division sign.
+    if (display.textContent.includes('-')) {
+        let firstNumber = display.textContent.slice(0, display.textContent.indexOf('-'))
+        let secondNumber = display.textContent.slice(display.textContent.indexOf('-') + 1)
+        display.textContent = firstNumber - secondNumber;
+    }
+
+    if (display.textContent.charAt(display.textContent.length - 1) != '÷') {
         display.textContent = display.textContent + '÷';
     }
+
+
 }
 
 multiplyButton.onclick = () => {
@@ -77,7 +114,7 @@ multiplyButton.onclick = () => {
     }
 }
 
-//======When you click the plus character======
+//======When you click the plus button======
 addButton.onclick = () => {
     //if the display already contains a division character, 
     //it'll resolve it first, and the add the plus sign.
@@ -118,7 +155,7 @@ addButton.onclick = () => {
     }
 };
 
-//======When you click the minus character=====
+//======When you click the minus button=====
 subtractButton.onclick = () => {
      //if the display already contains a division character, 
     //it'll resolve it first, and the add the minus sign.
