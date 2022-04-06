@@ -68,7 +68,6 @@ nineNum.onclick = () => {
 
 //======When you click the multiply button======
 divideButton.onclick = () => {
-    
     //if the display already contains a division character,
     //it'll resolve it first, and then add another division character.
     if (display.textContent.includes('÷')) {
@@ -76,7 +75,6 @@ divideButton.onclick = () => {
         let secondNumber = display.textContent.slice(display.textContent.indexOf('÷') + 1);
         display.textContent = firstNumber / secondNumber;
     }
-
     //if the display already contains a multiply character, 
     //it'll resolve it first, and then add the division sign.
     if (display.textContent.includes('x')) {
@@ -84,7 +82,6 @@ divideButton.onclick = () => {
         let secondNumber = display.textContent.slice(display.textContent.indexOf('x') + 1);
         display.textContent = firstNumber * secondNumber;
     }
-
     //if the display already contains a plus sign, 
     //it'll resolve it first, and then add division character.
     if (display.textContent.includes('+')) {
@@ -92,7 +89,6 @@ divideButton.onclick = () => {
         let secondNumber = +display.textContent.slice(display.textContent.indexOf('+') + 1)
         display.textContent = firstNumber + secondNumber;
     }
-
     //if the display already contains a minus character, 
     //it'll resolve it first, and then add the division sign.
     if (display.textContent.includes('-')) {
@@ -100,18 +96,48 @@ divideButton.onclick = () => {
         let secondNumber = display.textContent.slice(display.textContent.indexOf('-') + 1)
         display.textContent = firstNumber - secondNumber;
     }
-
+    //it'll add a plus sign to the display array, but only 
+    // if the last character of the array is different from a plus sign.
     if (display.textContent.charAt(display.textContent.length - 1) != '÷') {
         display.textContent = display.textContent + '÷';
     }
-
-
 }
 
 multiplyButton.onclick = () => {
-    if (!display.textContent.includes('x')) {
+    //if the display already contains a division character, 
+    //it'll resolve it first, and then add a multiply character.
+    if (display.textContent.includes('÷')) {
+        let firstNumber = display.textContent.slice(0, display.textContent.indexOf('÷'));
+        let secondNumber = display.textContent.slice(display.textContent.indexOf('÷') + 1);
+        display.textContent = firstNumber / secondNumber;
+    }
+    //if the display already contains a multiply character, 
+    //it'll resolve it first, and then add another multiply character.
+    if (display.textContent.includes('x')) {
+        let firstNumber = display.textContent.slice(0, display.textContent.indexOf('x'));
+        let secondNumber = display.textContent.slice(display.textContent.indexOf('x') + 1);
+        display.textContent = firstNumber * secondNumber;
+    }
+    //if the display already contains a plus sign, 
+    //it'll resolve it first, and then add a multiply character.
+    if (display.textContent.includes('+')) {
+        let firstNumber = +display.textContent.slice(0, display.textContent.indexOf('+'))
+        let secondNumber = +display.textContent.slice(display.textContent.indexOf('+') + 1)
+        display.textContent = firstNumber + secondNumber;
+    }
+    //if the display already contains a minus character, 
+    //it'll resolve it first, and then add a multiply character.
+    if (display.textContent.includes('-')) {
+        let firstNumber = display.textContent.slice(0, display.textContent.indexOf('-'))
+        let secondNumber = display.textContent.slice(display.textContent.indexOf('-') + 1)
+        display.textContent = firstNumber - secondNumber;
+    }
+     //it'll add a multiply character to the display array, but only 
+    // if the last character of the array is different from a multiply character.
+    if (display.textContent.charAt(display.textContent.length - 1) != 'x') {
         display.textContent = display.textContent + 'x';
     }
+
 }
 
 //======When you click the plus button======
@@ -123,7 +149,6 @@ addButton.onclick = () => {
         let secondNumber = display.textContent.slice(display.textContent.indexOf('÷') + 1);
         display.textContent = firstNumber / secondNumber;
     }
-
     //if the display already contains a multiply character, 
     //it'll resolve it first, and the add the plus sign.
     if (display.textContent.includes('x')) {
@@ -131,7 +156,6 @@ addButton.onclick = () => {
         let secondNumber = display.textContent.slice(display.textContent.indexOf('x') + 1);
         display.textContent = firstNumber * secondNumber;
     }
-
     //if the display already contains a plus sign, 
     //it'll resolve it first, and the add another plus sign.
     if (display.textContent.includes('+')) {
@@ -139,7 +163,6 @@ addButton.onclick = () => {
         let secondNumber = +display.textContent.slice(display.textContent.indexOf('+') + 1)
         display.textContent = firstNumber + secondNumber;
     }
-
     //if the display already contains a minus character, 
     //it'll resolve it first, and the add the plus sign.
     if (display.textContent.includes('-')) {
@@ -147,7 +170,6 @@ addButton.onclick = () => {
         let secondNumber = display.textContent.slice(display.textContent.indexOf('-') + 1)
         display.textContent = firstNumber - secondNumber;
     }
-
     //it'll add a plus sign to the display array, but only 
     // if the last character of the array is different from a plus sign.
     if (display.textContent.charAt(display.textContent.length - 1) != '+'){
@@ -164,7 +186,6 @@ subtractButton.onclick = () => {
         let secondNumber = display.textContent.slice(display.textContent.indexOf('÷') + 1);
         display.textContent = firstNumber / secondNumber;
     }
-
     //if the display already contains a multiply character, 
     //it'll resolve it first, and the add the minus sign.
     if (display.textContent.includes('x')) {
@@ -172,7 +193,6 @@ subtractButton.onclick = () => {
         let secondNumber = display.textContent.slice(display.textContent.indexOf('x') + 1);
         display.textContent = firstNumber * secondNumber;
     }
-
     //if the display already contains a plus character, 
     //it'll resolve it first, and the add the minus sign.
     if (display.textContent.includes('+')) {
@@ -180,7 +200,6 @@ subtractButton.onclick = () => {
         let secondNumber = +display.textContent.slice(display.textContent.indexOf('+') + 1);
         display.textContent = firstNumber + secondNumber;
     }
-
     //if the display already contains a minus character, 
     //it'll resolve it first, and the add another minus character.
     if (display.textContent.includes('-')) {
@@ -188,7 +207,6 @@ subtractButton.onclick = () => {
         let secondNumber = display.textContent.slice(display.textContent.indexOf('-') + 1)
         display.textContent = firstNumber - secondNumber;
     }
-
     //it'll add the minus character to the display string
     // but only if the last cahracter of the array is not not a minus character.
     if(!display.textContent.includes('-')){
