@@ -25,45 +25,65 @@ const resultButton = document.querySelector('.result-button');
 clearButton.addEventListener('click', clearDisplay);
 
 function clearDisplay() {
-    //erases anything that is in the display.
-    display.textContent = '';
+    //erases everything and display zero
+    display.textContent = 0;
 }
 
 //backspace button.
 backspace.addEventListener('click', () => {
-    //removes the last character of the display array. 
+    //removes the last character but only if the number of characters in the display is higher 
+    // than 1.
+    if (display.textContent.length > 1) {
     display.textContent = display.textContent.slice(0, display.textContent.length -1);
+    //if it isn't it'll set the display to zero.
+    } else {display.textContent = '0'}
 })
 
+//when clicking the zero button:
+//if the calc screen is displaying 0, it won't do anything;
+//otherwise, it'll add a zero to the display string.
 zeroButton.onclick = () => {
+    display.textContent == 0 ? display.textContent = display.textContent + '' : 
     display.textContent = display.textContent + 0
 };
+//when clicking the 'one' button:
+//if the calc screen is displaying 0, it'll substitute it for 1;
+//otherwise, it'll add a 1 to the display string.
 oneNum.onclick = () => {
-    display.textContent = display.textContent + 1
+    display.textContent == 0 ? display.textContent = 1 : display.textContent = display.textContent + 1
 };
+//when clicking the 'two' button:
+//if the calc screen is displaying 0, it'll substitute it for 2;
+//otherwise, it'll add a 2 to the display string.
 twoNum.onclick = () => {
-    display.textContent = display.textContent + 2
+    display.textContent == 0 ? display.textContent = 2 : display.textContent = display.textContent + 2
 };
+//when clicking the 'three' button:
+//if the calc screen is displaying 0, it'll substitute it for 3;
+//otherwise, it'll add a 3 to the display string.
 threeNum.onclick = () => {
-    display.textContent = display.textContent + 3
+    display.textContent == 0 ? display.textContent = 3 : display.textContent = display.textContent + 3
 };
+//when clicking the 'four' button:
+//if the calc screen is displaying 0, it'll substitute it for 4;
+//otherwise, it'll add a 4 to the display string.
 fourNum.onclick = () => {
-    display.textContent = display.textContent + 4
+    display.textContent == 0 ? display.textContent = 4 : display.textContent = display.textContent + 4
 };
 fiveNum.onclick = () => {
-    display.textContent = display.textContent + 5
+    display.textContent == 0 ? display.textContent = 5 : display.textContent = display.textContent + 5
 };
 sixNum.onclick = () => {
-    display.textContent = display.textContent + 6
+    display.textContent == 0 ? display.textContent = 6 : display.textContent = display.textContent + 6
 };
 sevenNum.onclick = () => {
-    display.textContent = display.textContent + 7
+    display.textContent == 0 ? display.textContent = 7 : display.textContent = display.textContent + 7
 };
 eightNum.onclick = () => {
-    display.textContent = display.textContent + 8
+    display.textContent == 0 ? display.textContent = 8 : display.textContent = display.textContent + 8
 };
 nineNum.onclick = () => {
-    display.textContent = display.textContent + 9
+    display.textContent == 0 ? display.textContent = 9 : display.textContent = display.textContent + 9
 };
 
 //======When you click the multiply button======
