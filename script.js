@@ -73,14 +73,14 @@ divideButton.onclick = () => {
     if (display.textContent.includes('÷')) {
         let firstNumber = display.textContent.slice(0, display.textContent.indexOf('÷'));
         let secondNumber = display.textContent.slice(display.textContent.indexOf('÷') + 1);
-        display.textContent = firstNumber / secondNumber;
+        display.textContent = (firstNumber / secondNumber).toFixed(1);
     }
     //if the display already contains a multiply character, 
     //it'll resolve it first, and then add the division sign.
     if (display.textContent.includes('x')) {
         let firstNumber = display.textContent.slice(0, display.textContent.indexOf('x'));
         let secondNumber = display.textContent.slice(display.textContent.indexOf('x') + 1);
-        display.textContent = firstNumber * secondNumber;
+        display.textContent = (firstNumber * secondNumber).toFixed(1);
     }
     //if the display already contains a plus sign, 
     //it'll resolve it first, and then add division character.
@@ -102,7 +102,7 @@ divideButton.onclick = () => {
         display.textContent = display.textContent + '÷';
     }
 }
-
+//======When you click the multiply button======
 multiplyButton.onclick = () => {
     //if the display already contains a division character, 
     //it'll resolve it first, and then add a multiply character.
@@ -147,14 +147,14 @@ addButton.onclick = () => {
     if (display.textContent.includes('÷')) {
         let firstNumber = display.textContent.slice(0, display.textContent.indexOf('÷'));
         let secondNumber = display.textContent.slice(display.textContent.indexOf('÷') + 1);
-        display.textContent = firstNumber / secondNumber;
+        display.textContent = (firstNumber / secondNumber).toFixed(1);
     }
     //if the display already contains a multiply character, 
     //it'll resolve it first, and the add the plus sign.
     if (display.textContent.includes('x')) {
         let firstNumber = display.textContent.slice(0, display.textContent.indexOf('x'));
         let secondNumber = display.textContent.slice(display.textContent.indexOf('x') + 1);
-        display.textContent = firstNumber * secondNumber;
+        display.textContent = (firstNumber * secondNumber).toFixed(1);
     }
     //if the display already contains a plus sign, 
     //it'll resolve it first, and the add another plus sign.
@@ -184,14 +184,14 @@ subtractButton.onclick = () => {
     if (display.textContent.includes('÷')) {
         let firstNumber = display.textContent.slice(0, display.textContent.indexOf('÷'));
         let secondNumber = display.textContent.slice(display.textContent.indexOf('÷') + 1);
-        display.textContent = firstNumber / secondNumber;
+        display.textContent = (firstNumber / secondNumber).toFixed(1);
     }
     //if the display already contains a multiply character, 
     //it'll resolve it first, and the add the minus sign.
     if (display.textContent.includes('x')) {
         let firstNumber = display.textContent.slice(0, display.textContent.indexOf('x'));
         let secondNumber = display.textContent.slice(display.textContent.indexOf('x') + 1);
-        display.textContent = firstNumber * secondNumber;
+        display.textContent = (firstNumber * secondNumber).toFixed(1);
     }
     //if the display already contains a plus character, 
     //it'll resolve it first, and the add the minus sign.
@@ -220,14 +220,14 @@ resultButton.onclick = () => {
         let firstNumber = +display.textContent.slice(0, display.textContent.indexOf('÷'));
         let secondNumber = +display.textContent.slice(display.textContent.indexOf('÷') + 1);
 
-        display.textContent = firstNumber / secondNumber;
+        display.textContent = (firstNumber / secondNumber).toFixed(1);
     }
 
     if (display.textContent.includes('x')) {
         let firstNumber = +display.textContent.slice(0, display.textContent.indexOf('x'));
         let secondNumber = +display.textContent.slice(display.textContent.indexOf('x') + 1);
 
-        display.textContent = firstNumber * secondNumber;
+        display.textContent = (firstNumber * secondNumber).toFixed(1);
     }
 
     if (display.textContent.includes('-')) {
