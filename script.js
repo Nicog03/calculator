@@ -70,18 +70,33 @@ threeNum.onclick = () => {
 fourNum.onclick = () => {
     display.textContent == 0 ? display.textContent = 4 : display.textContent = display.textContent + 4
 };
+//when clicking the 'five' button:
+//if the calc screen is displaying 0, it'll substitute it for 5;
+//otherwise, it'll add a 5 to the display string.
 fiveNum.onclick = () => {
     display.textContent == 0 ? display.textContent = 5 : display.textContent = display.textContent + 5
 };
+//when clicking the 'six' button:
+//if the calc screen is displaying 0, it'll substitute it for 6;
+//otherwise, it'll add a 6 to the display string.
 sixNum.onclick = () => {
     display.textContent == 0 ? display.textContent = 6 : display.textContent = display.textContent + 6
 };
+//when clicking the 'seven' button:
+//if the calc screen is displaying 0, it'll substitute it for 7;
+//otherwise, it'll add a 7 to the display string.
 sevenNum.onclick = () => {
     display.textContent == 0 ? display.textContent = 7 : display.textContent = display.textContent + 7
 };
+//when clicking the 'eight' button:
+//if the calc screen is displaying 0, it'll substitute it for 8;
+//otherwise, it'll add a 8 to the display string.
 eightNum.onclick = () => {
     display.textContent == 0 ? display.textContent = 8 : display.textContent = display.textContent + 8
 };
+//when clicking the 'nine' button:
+//if the calc screen is displaying 0, it'll substitute it for 9;
+//otherwise, it'll add a 9 to the display string.
 nineNum.onclick = () => {
     display.textContent == 0 ? display.textContent = 9 : display.textContent = display.textContent + 9
 };
