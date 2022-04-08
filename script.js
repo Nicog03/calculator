@@ -31,83 +31,99 @@ function clearDisplay() {
 
 //backspace button.
 backspace.addEventListener('click', () => {
-    //removes the last character but only if the number of characters in the display is higher 
-    // than 1.
-    if (display.textContent.length > 1) {
-    display.textContent = display.textContent.slice(0, display.textContent.length -1);
+    //sets the display contet as 0 if the display is showing an error message
+    display.textContent == 'error' ? display.textContent = 0 :
+    //OTHERWISE:
+    //it removes the last character but only if the number of characters in the display is higher 
+    //than 1.
+    display.textContent.length > 1 ?
+    display.textContent = display.textContent.slice(0, display.textContent.length -1) :
     //if it isn't it'll set the display to zero.
-    } else {display.textContent = '0'}
+    display.textContent = '0'
 })
 
 //when clicking the zero button:
 //if the calc screen is displaying 0, it won't do anything;
+//if the calc screen is displaying 'error', it'll substitute it for 0;
 //otherwise, it'll add a zero to the display string.
 zeroButton.onclick = () => {
     display.textContent == 0 ? display.textContent = display.textContent + '' : 
+    display.textContent == 'error' ? display.textContent = 0 :
     display.textContent = display.textContent + 0
 };
 //when clicking the 'one' button:
-//if the calc screen is displaying 0, it'll substitute it for 1;
+//if the calc screen is displaying 0 or 'error', it'll substitute it for 1;
 //otherwise, it'll add a 1 to the display string.
 oneNum.onclick = () => {
-    display.textContent == 0 ? display.textContent = 1 : display.textContent = display.textContent + 1
+    display.textContent == 0 || display.textContent == 'error' ? 
+    display.textContent = 1 : display.textContent = display.textContent + 1
 };
 //when clicking the 'two' button:
-//if the calc screen is displaying 0, it'll substitute it for 2;
+//if the calc screen is displaying 0 or 'error', it'll substitute it for 2;
 //otherwise, it'll add a 2 to the display string.
 twoNum.onclick = () => {
-    display.textContent == 0 ? display.textContent = 2 : display.textContent = display.textContent + 2
+    display.textContent == 0 || display.textContent == 'error' ? 
+    display.textContent = 2 : display.textContent = display.textContent + 2
 };
 //when clicking the 'three' button:
-//if the calc screen is displaying 0, it'll substitute it for 3;
+//if the calc screen is displaying 0 or 'error', it'll substitute it for 3;
 //otherwise, it'll add a 3 to the display string.
 threeNum.onclick = () => {
-    display.textContent == 0 ? display.textContent = 3 : display.textContent = display.textContent + 3
+    display.textContent == 0 || display.textContent == 'error' ? 
+    display.textContent = 3 : display.textContent = display.textContent + 3
 };
 //when clicking the 'four' button:
-//if the calc screen is displaying 0, it'll substitute it for 4;
+//if the calc screen is displaying 0 or 'error', it'll substitute it for 4;
 //otherwise, it'll add a 4 to the display string.
 fourNum.onclick = () => {
-    display.textContent == 0 ? display.textContent = 4 : display.textContent = display.textContent + 4
+    display.textContent == 0 || display.textContent == 'error' ? 
+    display.textContent = 4 : display.textContent = display.textContent + 4
 };
 //when clicking the 'five' button:
-//if the calc screen is displaying 0, it'll substitute it for 5;
+//if the calc screen is displaying 0 or 'error', it'll substitute it for 5;
 //otherwise, it'll add a 5 to the display string.
 fiveNum.onclick = () => {
-    display.textContent == 0 ? display.textContent = 5 : display.textContent = display.textContent + 5
+    display.textContent == 0 || display.textContent == 'error' ? 
+    display.textContent = 5 : display.textContent = display.textContent + 5
 };
 //when clicking the 'six' button:
-//if the calc screen is displaying 0, it'll substitute it for 6;
+//if the calc screen is displaying 0 or 'error', it'll substitute it for 6;
 //otherwise, it'll add a 6 to the display string.
 sixNum.onclick = () => {
-    display.textContent == 0 ? display.textContent = 6 : display.textContent = display.textContent + 6
+    display.textContent == 0 || display.textContent == 'error' ? 
+    display.textContent = 6 : display.textContent = display.textContent + 6
 };
 //when clicking the 'seven' button:
-//if the calc screen is displaying 0, it'll substitute it for 7;
+//if the calc screen is displaying 0 or 'error', it'll substitute it for 7;
 //otherwise, it'll add a 7 to the display string.
 sevenNum.onclick = () => {
-    display.textContent == 0 ? display.textContent = 7 : display.textContent = display.textContent + 7
+    display.textContent == 0 || display.textContent == 'error' ? 
+    display.textContent = 7 : display.textContent = display.textContent + 7
 };
 //when clicking the 'eight' button:
-//if the calc screen is displaying 0, it'll substitute it for 8;
+//if the calc screen is displaying 0 or 'error', it'll substitute it for 8;
 //otherwise, it'll add a 8 to the display string.
 eightNum.onclick = () => {
-    display.textContent == 0 ? display.textContent = 8 : display.textContent = display.textContent + 8
+    display.textContent == 0 || display.textContent == 'error' ? 
+    display.textContent = 8 : display.textContent = display.textContent + 8
 };
 //when clicking the 'nine' button:
-//if the calc screen is displaying 0, it'll substitute it for 9;
+//if the calc screen is displaying 0 or 'error', it'll substitute it for 9;
 //otherwise, it'll add a 9 to the display string.
 nineNum.onclick = () => {
-    display.textContent == 0 ? display.textContent = 9 : display.textContent = display.textContent + 9
+    display.textContent == 0 || display.textContent == 'error' ? 
+    display.textContent = 9 : display.textContent = display.textContent + 9
 };
 
 //======When you click the multiply button======
 divideButton.onclick = () => {
     //if the display already contains a division character,
     //it'll resolve it first, and then add another division character.
+    //if the second number in the division is zero it returns an error.
     if (display.textContent.includes('÷')) {
         let firstNumber = display.textContent.slice(0, display.textContent.indexOf('÷'));
         let secondNumber = display.textContent.slice(display.textContent.indexOf('÷') + 1);
+        secondNumber==0 ? display.textContent = 'error' :
         display.textContent = (firstNumber / secondNumber).toFixed(1);
     }
     //if the display already contains a multiply character, 
@@ -132,8 +148,9 @@ divideButton.onclick = () => {
         display.textContent = firstNumber - secondNumber;
     }
     //it'll add a plus sign to the display array, but only 
-    // if the last character of the array is different from a plus sign.
-    if (display.textContent.charAt(display.textContent.length - 1) != '÷') {
+    //if the string isn't displaying an error message
+    //or if it doesn't already have a plus character
+    if (display.textContent != 'error' && !display.textContent.includes('÷')) {
         display.textContent = display.textContent + '÷';
     }
 }
@@ -141,9 +158,11 @@ divideButton.onclick = () => {
 multiplyButton.onclick = () => {
     //if the display already contains a division character, 
     //it'll resolve it first, and then add a multiply character.
+    //if the second number in the division is zero it returns an error.
     if (display.textContent.includes('÷')) {
         let firstNumber = display.textContent.slice(0, display.textContent.indexOf('÷'));
         let secondNumber = display.textContent.slice(display.textContent.indexOf('÷') + 1);
+        secondNumber==0 ? display.textContent = 'error' :
         display.textContent = firstNumber / secondNumber;
     }
     //if the display already contains a multiply character, 
@@ -168,8 +187,9 @@ multiplyButton.onclick = () => {
         display.textContent = firstNumber - secondNumber;
     }
      //it'll add a multiply character to the display array, but only 
-    // if the last character of the array is different from a multiply character.
-    if (display.textContent.charAt(display.textContent.length - 1) != 'x') {
+    //if the string isn't displaying an error message
+    //or if it doesn't already have a multiplication character
+    if (display.textContent != 'error' && !display.textContent.includes('x')) {
         display.textContent = display.textContent + 'x';
     }
 
@@ -179,9 +199,11 @@ multiplyButton.onclick = () => {
 addButton.onclick = () => {
     //if the display already contains a division character, 
     //it'll resolve it first, and the add the plus sign.
+    //if the second number in the division is zero it returns an error.
     if (display.textContent.includes('÷')) {
         let firstNumber = display.textContent.slice(0, display.textContent.indexOf('÷'));
         let secondNumber = display.textContent.slice(display.textContent.indexOf('÷') + 1);
+        secondNumber==0 ? display.textContent = 'error' :
         display.textContent = (firstNumber / secondNumber).toFixed(1);
     }
     //if the display already contains a multiply character, 
@@ -206,8 +228,9 @@ addButton.onclick = () => {
         display.textContent = firstNumber - secondNumber;
     }
     //it'll add a plus sign to the display array, but only 
-    // if the last character of the array is different from a plus sign.
-    if (display.textContent.charAt(display.textContent.length - 1) != '+'){
+    //if the string isn't displaying an error message
+    //or if it doesn't already have a plus character
+    if (display.textContent != 'error' && !display.textContent.includes('+')){
         display.textContent = display.textContent + '+'
     }
 };
@@ -216,9 +239,11 @@ addButton.onclick = () => {
 subtractButton.onclick = () => {
      //if the display already contains a division character, 
     //it'll resolve it first, and the add the minus sign.
+    //if the second number in the division is zero it returns an error.
     if (display.textContent.includes('÷')) {
         let firstNumber = display.textContent.slice(0, display.textContent.indexOf('÷'));
         let secondNumber = display.textContent.slice(display.textContent.indexOf('÷') + 1);
+        secondNumber==0 ? display.textContent = 'error' :
         display.textContent = (firstNumber / secondNumber).toFixed(1);
     }
     //if the display already contains a multiply character, 
@@ -242,9 +267,10 @@ subtractButton.onclick = () => {
         let secondNumber = display.textContent.slice(display.textContent.indexOf('-') + 1)
         display.textContent = firstNumber - secondNumber;
     }
-    //it'll add the minus character to the display string
-    // but only if the last cahracter of the array is not not a minus character.
-    if(!display.textContent.includes('-')){
+    //it'll add the minus character to the display string but only
+    //but only if the string isn't displaying an error message
+    //or if it doesn't already have a minus character
+    if(display.textContent != 'error' && !display.textContent.includes('-')){
         display.textContent = display.textContent + '-'
     }
 };
@@ -254,6 +280,8 @@ resultButton.onclick = () => {
     if (display.textContent.includes('÷')) {
         let firstNumber = +display.textContent.slice(0, display.textContent.indexOf('÷'));
         let secondNumber = +display.textContent.slice(display.textContent.indexOf('÷') + 1);
+
+        !secondNumber ? display.textContent = "error" : 
 
         display.textContent = (firstNumber / secondNumber).toFixed(1);
     }
