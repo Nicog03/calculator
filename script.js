@@ -117,6 +117,11 @@ nineNum.onclick = () => {
 
 //======When you click the multiply button======
 divideButton.onclick = () => {
+    //if the display is showing an error message
+    //it'll substitute it for a ÷ character
+    if (display.textContent == 'error') {
+        display.textContent = '÷'
+    }
     //if the display already contains a division character,
     //it'll resolve it first, and then add another division character.
     //if the second number in the division is zero it returns an error.
@@ -156,6 +161,11 @@ divideButton.onclick = () => {
 }
 //======When you click the multiply button======
 multiplyButton.onclick = () => {
+    //if the display is showing an error message
+    //it'll substitute it for a x character
+    if (display.textContent == 'error') {
+        display.textContent = 'x'
+    }
     //if the display already contains a division character, 
     //it'll resolve it first, and then add a multiply character.
     //if the second number in the division is zero it returns an error.
@@ -197,6 +207,11 @@ multiplyButton.onclick = () => {
 
 //======When you click the plus button======
 addButton.onclick = () => {
+    //if the display is showing an error message
+    //it'll substitute it for a + character
+    if (display.textContent == 'error') {
+        display.textContent = '+'
+    }
     //if the display already contains a division character, 
     //it'll resolve it first, and the add the plus sign.
     //if the second number in the division is zero it returns an error.
@@ -237,6 +252,11 @@ addButton.onclick = () => {
 
 //======When you click the minus button=====
 subtractButton.onclick = () => {
+    //if the display is showing an error message
+    //it'll substitute it for a - character
+    if (display.textContent == 'error') {
+        display.textContent = '-'
+    }
      //if the display already contains a division character, 
     //it'll resolve it first, and the add the minus sign.
     //if the second number in the division is zero it returns an error.
