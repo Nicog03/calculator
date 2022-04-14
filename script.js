@@ -16,54 +16,11 @@ const sevenNum = document.getElementById('sevenNum');
 const eightNum = document.getElementById('eightNum');
 const nineNum = document.getElementById('nineNum');
 
-function writeZero() {
-    display.textContent === '0' ? display.textContent = display.textContent + '' : 
-    display.textContent == 'error' ? display.textContent = 0 :
-    display.textContent = display.textContent + 0
-};
-function writeOne() {
-    display.textContent === '0' || display.textContent == 'error' ? 
-    display.textContent = 1 : display.textContent = display.textContent + 1
-};
-function writeTwo() {
-    display.textContent === '0' || display.textContent == 'error' ? 
-    display.textContent = 2 : display.textContent = display.textContent + 2
-};
-function writeThree() {
-    display.textContent === '0' || display.textContent == 'error' ? 
-    display.textContent = 3 : display.textContent = display.textContent + 3
-};
-function writeFour() {
-    display.textContent === '0' || display.textContent == 'error' ? 
-    display.textContent = 4 : display.textContent = display.textContent + 4
-};
-function writeFive() {
-    display.textContent === '0' || display.textContent == 'error' ? 
-    display.textContent = 5 : display.textContent = display.textContent + 5
-};
-function writeSix() {
-    display.textContent === '0' || display.textContent == 'error' ? 
-    display.textContent = 6 : display.textContent = display.textContent + 6
-};
-function writeSeven() {
-    display.textContent === '0' || display.textContent == 'error' ? 
-    display.textContent = 7 : display.textContent = display.textContent + 7
-};
-function writeEight() {
-    display.textContent === '0'|| display.textContent == 'error' ? 
-    display.textContent = 8 : display.textContent = display.textContent + 8
-};
-function writeNine() {
-    display.textContent === '0' || display.textContent == 'error' ? 
-    display.textContent = 9 : display.textContent = display.textContent + 9
-};
-
 const divideButton = document.getElementById('divide-button');
 const multiplyButton = document.getElementById('multiply-button');
 const addButton = document.getElementById('plus-button');
 const subtractButton = document.getElementById('subtract-button');
 const resultButton = document.querySelector('.result-button');
-
 
 //adds a click listener to the 'Clear' button
 clearButton.addEventListener('click', clearDisplay);
@@ -84,50 +41,110 @@ backspace.addEventListener('click', () => {
     display.textContent = display.textContent.slice(0, display.textContent.length -1) :
     //if it isn't it'll set the display to zero.
     display.textContent = '0'
-})
+});
 
+//-----------------------ZERO BUTTON------------------------------------
 //when clicking the zero button, it'll execute the 'writeZero' function
-//if the calc screen is displaying 0, it won't do anything;
-//if the calc screen is displaying 'error', it'll substitute it for 0;
-//otherwise, it'll add a zero to the display string.
 zeroButton.onclick = writeZero
+function writeZero() {
+    //if the calc screen is displaying 0, it won't do anything;
+    //if the calc screen is displaying 'error', it'll substitute it for 0;
+    //otherwise, it'll add a zero to the display string.
+    display.textContent === '0' ? display.textContent = display.textContent + '' : 
+    display.textContent == 'error' ? display.textContent = 0 :
+    display.textContent = display.textContent + 0
+};
 
-//when clicking the 'one' button:
-//if the calc screen is displaying 0 or 'error', it'll substitute it for 1;
-//otherwise, it'll add a 1 to the display string.
+//-----------------------'ONE' BUTTON-----------------------------------
+//when clicking the 'one' button, it'll execute the 'writeOne' function
 oneNum.onclick = writeOne
-//when clicking the 'two' button:
-//if the calc screen is displaying 0 or 'error', it'll substitute it for 2;
-//otherwise, it'll add a 2 to the display string.
+
+function writeOne() {
+    //if the calc screen is displaying 0 or 'error', it'll substitute it for 1;
+    //otherwise, it'll add a 1 to the display string.
+    display.textContent === '0' || display.textContent == 'error' ? 
+    display.textContent = 1 : display.textContent = display.textContent + 1
+};
+
+//-----------------------'TWO' BUTTON-----------------------------------
+//when clicking the 'two' button, it'll execute the 'writeTwo' function
 twoNum.onclick = writeTwo
-//when clicking the 'three' button:
-//if the calc screen is displaying 0 or 'error', it'll substitute it for 3;
-//otherwise, it'll add a 3 to the display string.
+function writeTwo() {
+    //if the calc screen is displaying 0 or 'error', it'll substitute it for 2;
+    //otherwise, it'll add a 2 to the display string.
+    display.textContent === '0' || display.textContent == 'error' ? 
+    display.textContent = 2 : display.textContent = display.textContent + 2
+};
+
+//-----------------------'THREE' BUTTON---------------------------------
+//when clicking the 'three' button, it'll execute the 'writeThree' function
 threeNum.onclick = writeThree
-//when clicking the 'four' button:
-//if the calc screen is displaying 0 or 'error', it'll substitute it for 4;
-//otherwise, it'll add a 4 to the display string.
+function writeThree() {
+    //if the calc screen is displaying 0 or 'error', it'll substitute it for 3;
+    //otherwise, it'll add a 3 to the display string.
+    display.textContent === '0' || display.textContent == 'error' ? 
+    display.textContent = 3 : display.textContent = display.textContent + 3
+};
+
+//-----------------------'FOUR' BUTTON----------------------------------
+//when clicking the 'four' button, it'll execute the 'writeFour' function
 fourNum.onclick = writeFour
-//when clicking the 'five' button:
-//if the calc screen is displaying 0 or 'error', it'll substitute it for 5;
-//otherwise, it'll add a 5 to the display string.
+function writeFour() {
+    //if the calc screen is displaying 0 or 'error', it'll substitute it for 4;
+    //otherwise, it'll add a 4 to the display string.
+    display.textContent === '0' || display.textContent == 'error' ? 
+    display.textContent = 4 : display.textContent = display.textContent + 4
+};
+
+//-----------------------'FIVE' BUTTON----------------------------------
+//when clicking the 'five' button, it'll execute the 'writeFive' function
 fiveNum.onclick = writeFive
-//when clicking the 'six' button:
-//if the calc screen is displaying 0 or 'error', it'll substitute it for 6;
-//otherwise, it'll add a 6 to the display string.
+function writeFive() {
+    //if the calc screen is displaying 0 or 'error', it'll substitute it for 5;
+    //otherwise, it'll add a 5 to the display string.
+    display.textContent === '0' || display.textContent == 'error' ? 
+    display.textContent = 5 : display.textContent = display.textContent + 5
+};
+
+//-----------------------'SIX' BUTTON-----------------------------------
+//when clicking the 'six' button, it'll execute the 'writeSix' function
 sixNum.onclick = writeSix
-//when clicking the 'seven' button:
-//if the calc screen is displaying 0 or 'error', it'll substitute it for 7;
-//otherwise, it'll add a 7 to the display string.
+function writeSix() {
+    //if the calc screen is displaying 0 or 'error', it'll substitute it for 6;
+    //otherwise, it'll add a 6 to the display string.
+    display.textContent === '0' || display.textContent == 'error' ? 
+    display.textContent = 6 : display.textContent = display.textContent + 6
+};
+
+//-----------------------'SEVEN' BUTTON---------------------------------
+//when clicking the 'seven' button, it'll execute the 'writeSeven' function
 sevenNum.onclick = writeSeven
-//when clicking the 'eight' button:
-//if the calc screen is displaying 0 or 'error', it'll substitute it for 8;
-//otherwise, it'll add a 8 to the display string.
+function writeSeven() {
+    //if the calc screen is displaying 0 or 'error', it'll substitute it for 7;
+    //otherwise, it'll add a 7 to the display string.
+    display.textContent === '0' || display.textContent == 'error' ? 
+    display.textContent = 7 : display.textContent = display.textContent + 7
+};
+
+//-----------------------'EIGHT' BUTTON---------------------------------
+//when clicking the 'eight' button, it'll execute the 'writeEight' function
 eightNum.onclick = writeEight
-//when clicking the 'nine' button:
-//if the calc screen is displaying 0 or 'error', it'll substitute it for 9;
-//otherwise, it'll add a 9 to the display string.
+function writeEight() {
+    //if the calc screen is displaying 0 or 'error', it'll substitute it for 8;
+    //otherwise, it'll add a 8 to the display string.
+    display.textContent === '0'|| display.textContent == 'error' ? 
+    display.textContent = 8 : display.textContent = display.textContent + 8
+};
+
+//-----------------------'NINE' BUTTON----------------------------------
+//when clicking the 'nine' button, it'll execute the 'writeNine' function
 nineNum.onclick = writeNine
+function writeNine() {
+    //if the calc screen is displaying 0 or 'error', it'll substitute it for 9;
+    //otherwise, it'll add a 9 to the display string.
+    display.textContent === '0' || display.textContent == 'error' ? 
+    display.textContent = 9 : display.textContent = display.textContent + 9
+};
 
 //======When you click the dot button======
 dotButton.onclick = () => {
