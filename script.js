@@ -16,44 +16,44 @@ const sevenNum = document.getElementById('sevenNum');
 const eightNum = document.getElementById('eightNum');
 const nineNum = document.getElementById('nineNum');
 
-const writeZero =  () => {
+function writeZero() {
     display.textContent === '0' ? display.textContent = display.textContent + '' : 
     display.textContent == 'error' ? display.textContent = 0 :
     display.textContent = display.textContent + 0
 };
-const writeOne = () => {
+function writeOne() {
     display.textContent === '0' || display.textContent == 'error' ? 
     display.textContent = 1 : display.textContent = display.textContent + 1
 };
-const writeTwo = () => {
+function writeTwo() {
     display.textContent === '0' || display.textContent == 'error' ? 
     display.textContent = 2 : display.textContent = display.textContent + 2
 };
-const writeThree = () => {
+function writeThree() {
     display.textContent === '0' || display.textContent == 'error' ? 
     display.textContent = 3 : display.textContent = display.textContent + 3
 };
-const writeFour = () => {
+function writeFour() {
     display.textContent === '0' || display.textContent == 'error' ? 
     display.textContent = 4 : display.textContent = display.textContent + 4
 };
-const writeFive = () => {
+function writeFive() {
     display.textContent === '0' || display.textContent == 'error' ? 
     display.textContent = 5 : display.textContent = display.textContent + 5
 };
-const writeSix = () => {
+function writeSix() {
     display.textContent === '0' || display.textContent == 'error' ? 
     display.textContent = 6 : display.textContent = display.textContent + 6
 };
-const writeSeven = () => {
+function writeSeven() {
     display.textContent === '0' || display.textContent == 'error' ? 
     display.textContent = 7 : display.textContent = display.textContent + 7
 };
-const writeEight = () => {
+function writeEight() {
     display.textContent === '0'|| display.textContent == 'error' ? 
     display.textContent = 8 : display.textContent = display.textContent + 8
 };
-const writeNine = () => {
+function writeNine() {
     display.textContent === '0' || display.textContent == 'error' ? 
     display.textContent = 9 : display.textContent = display.textContent + 9
 };
