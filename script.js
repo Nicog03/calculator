@@ -319,19 +319,9 @@ resultButton.onclick = () => {
     }
 
     if(display.textContent.includes('+')) {
-        //if the first number in the display string DON'T HAVE a - as a predecessor,
-        //this code will be executed.
-        if (!display.textContent.charAt(1) == '-') {
             let firstNumber = +display.textContent.slice(0, display.textContent.indexOf('+'));
             let secondNumber = +display.textContent.slice(display.textContent.indexOf('+') + 1);
         
             display.textContent = firstNumber + secondNumber;
-        //if it has, this code will be executed instead.
-        } else {
-            let firstNumber = +display.textContent.slice(0, display.textContent.indexOf('+'));
-            let secondNumber = +display.textContent.slice(display.textContent.indexOf('+') + 1);
-            
-            display.textContent = firstNumber + secondNumber;
-        }
     }
 }
