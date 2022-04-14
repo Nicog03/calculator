@@ -18,6 +18,7 @@ body {
   background-color: #7a7a7a;
   border: #161616 solid 5px;
   box-shadow: #161616 3px 3px;
+  max-width: 445px;
 }
 
 .display {
