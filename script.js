@@ -45,7 +45,7 @@ backspace.addEventListener('click', () => {
 
 //-----------------------ZERO BUTTON------------------------------------
 //when clicking the zero button, it'll execute the 'writeZero' function
-zeroButton.onclick = writeZero
+zeroButton.addEventListener('click', writeZero)
 function writeZero() {
     //if the calc screen is displaying 0, it won't do anything;
     //if the calc screen is displaying 'error', it'll substitute it for 0;
@@ -57,8 +57,7 @@ function writeZero() {
 
 //-----------------------'ONE' BUTTON-----------------------------------
 //when clicking the 'one' button, it'll execute the 'writeOne' function
-oneNum.onclick = writeOne
-
+oneNum.addEventListener('click', writeOne);
 function writeOne() {
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 1;
     //otherwise, it'll add a 1 to the display string.
@@ -68,7 +67,7 @@ function writeOne() {
 
 //-----------------------'TWO' BUTTON-----------------------------------
 //when clicking the 'two' button, it'll execute the 'writeTwo' function
-twoNum.onclick = writeTwo
+twoNum.addEventListener('click', writeTwo);
 function writeTwo() {
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 2;
     //otherwise, it'll add a 2 to the display string.
@@ -78,7 +77,7 @@ function writeTwo() {
 
 //-----------------------'THREE' BUTTON---------------------------------
 //when clicking the 'three' button, it'll execute the 'writeThree' function
-threeNum.onclick = writeThree
+threeNum.addEventListener('click', writeThree);
 function writeThree() {
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 3;
     //otherwise, it'll add a 3 to the display string.
@@ -88,7 +87,7 @@ function writeThree() {
 
 //-----------------------'FOUR' BUTTON----------------------------------
 //when clicking the 'four' button, it'll execute the 'writeFour' function
-fourNum.onclick = writeFour
+fourNum.addEventListener('click', writeFour);
 function writeFour() {
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 4;
     //otherwise, it'll add a 4 to the display string.
@@ -98,7 +97,7 @@ function writeFour() {
 
 //-----------------------'FIVE' BUTTON----------------------------------
 //when clicking the 'five' button, it'll execute the 'writeFive' function
-fiveNum.onclick = writeFive
+fiveNum.addEventListener('click', writeFive);
 function writeFive() {
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 5;
     //otherwise, it'll add a 5 to the display string.
@@ -108,7 +107,7 @@ function writeFive() {
 
 //-----------------------'SIX' BUTTON-----------------------------------
 //when clicking the 'six' button, it'll execute the 'writeSix' function
-sixNum.onclick = writeSix
+sixNum.addEventListener('click', writeSix);
 function writeSix() {
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 6;
     //otherwise, it'll add a 6 to the display string.
@@ -118,7 +117,7 @@ function writeSix() {
 
 //-----------------------'SEVEN' BUTTON---------------------------------
 //when clicking the 'seven' button, it'll execute the 'writeSeven' function
-sevenNum.onclick = writeSeven
+sevenNum.addEventListener('click', writeSeven);
 function writeSeven() {
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 7;
     //otherwise, it'll add a 7 to the display string.
@@ -128,7 +127,7 @@ function writeSeven() {
 
 //-----------------------'EIGHT' BUTTON---------------------------------
 //when clicking the 'eight' button, it'll execute the 'writeEight' function
-eightNum.onclick = writeEight
+eightNum.addEventListener('click', writeEight);
 function writeEight() {
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 8;
     //otherwise, it'll add a 8 to the display string.
@@ -138,7 +137,7 @@ function writeEight() {
 
 //-----------------------'NINE' BUTTON----------------------------------
 //when clicking the 'nine' button, it'll execute the 'writeNine' function
-nineNum.onclick = writeNine
+nineNum.addEventListener('click', writeNine);
 function writeNine() {
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 9;
     //otherwise, it'll add a 9 to the display string.
