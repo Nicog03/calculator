@@ -43,10 +43,104 @@ backspace.addEventListener('click', () => {
     display.textContent = '0'
 });
 
+//this function removes all number buttons event listeners, making it impossible
+//for the user to keep typing (at least i hope so...).
+function lockCalc() {
+    //removes the 'click' event listener from the zero button
+    zeroButton.removeEventListener('click', writeZero);
+    //adds another event listener, which will subtitute the old 
+    zeroButton.addEventListener('click', () => {
+        if (display.textContent.length < 10) {
+        display.textContent === '0' ? display.textContent = display.textContent + '' : 
+        display.textContent == 'error' ? display.textContent = 0 :
+        display.textContent = display.textContent + 0
+    }
+    });
+    //removes the 'click' event listener from the one button
+    oneNum.removeEventListener('click', writeOne);
+    oneNum.addEventListener('click', () => {
+        if (display.textContent.length < 10) {
+            display.textContent === '0' || display.textContent == 'error' ? 
+            display.textContent = 1 : display.textContent = display.textContent + 1
+    }
+    });
+    //removes the 'click' event listener from the two button
+    twoNum.removeEventListener('click', writeTwo);
+    twoNum.addEventListener('click', () => {
+        if (display.textContent.length < 10) {
+            display.textContent === '0' || display.textContent == 'error' ? 
+            display.textContent = 2 : display.textContent = display.textContent + 2
+    }
+    });
+    //removes the 'click' event listener from the three button
+    threeNum.removeEventListener('click', writeThree);
+    threeNum.addEventListener('click', () => {
+        if (display.textContent.length < 10) {
+            display.textContent === '0' || display.textContent == 'error' ? 
+            display.textContent = 3 : display.textContent = display.textContent + 3
+    }
+    });
+    //removes the 'click' event listener from the four button
+    fourNum.removeEventListener('click', writeFour);
+    fourNum.addEventListener('click', () => {
+        if (display.textContent.length < 10) {
+            display.textContent === '0' || display.textContent == 'error' ? 
+            display.textContent = 4 : display.textContent = display.textContent + 4
+    }
+    });
+    //removes the 'click' event listener from the five button
+    fiveNum.removeEventListener('click', writeFive);
+    fiveNum.addEventListener('click', () => {
+        if (display.textContent.length < 10) {
+            display.textContent === '0' || display.textContent == 'error' ? 
+            display.textContent = 5 : display.textContent = display.textContent + 5
+    }
+    });
+    //removes the 'click' event listener from the six button
+    sixNum.removeEventListener('click', writeSix);
+    sixNum.addEventListener('click', () => {
+        if (display.textContent.length < 10) {
+            display.textContent === '0' || display.textContent == 'error' ? 
+            display.textContent = 6 : display.textContent = display.textContent + 6
+    }
+    });
+    //removes the 'click' event listener from the seven button
+    sevenNum.removeEventListener('click', writeSeven);
+    sevenNum.addEventListener('click', () => {
+        if (display.textContent.length < 10) {
+            display.textContent === '0' || display.textContent == 'error' ? 
+            display.textContent = 7 : display.textContent = display.textContent + 7
+    }
+    });
+    //removes the 'click' event listener from the eight button
+    eightNum.removeEventListener('click', writeEight);
+    eightNum.addEventListener('click', () => {
+        if (display.textContent.length < 10) {
+            display.textContent === '0'|| display.textContent == 'error' ? 
+            display.textContent = 8 : display.textContent = display.textContent + 8
+    }
+    });
+    //removes the 'click' event listener from the nine button
+    nineNum.removeEventListener('click', writeNine);
+    nineNum.addEventListener('click', () => {
+        if (display.textContent.length < 10) {
+            display.textContent === '0' || display.textContent == 'error' ? 
+            display.textContent = 9 : display.textContent = display.textContent + 9
+    }
+    });
+}
+
 //-----------------------ZERO BUTTON------------------------------------
 //when clicking the zero button, it'll execute the 'writeZero' function
 zeroButton.addEventListener('click', writeZero)
 function writeZero() {
+    console.log('yoo');
+    //when executed, the writeZero() function will check if 
+    //the amount of characters in the display surpasses nine,
+    //if it does, it'll lock all number buttons by calling the lockCalc() function.
+    if (display.textContent.length > 9) {
+        lockCalc()
+    }
     //if the calc screen is displaying 0, it won't do anything;
     //if the calc screen is displaying 'error', it'll substitute it for 0;
     //otherwise, it'll add a zero to the display string.
@@ -59,6 +153,12 @@ function writeZero() {
 //when clicking the 'one' button, it'll execute the 'writeOne' function
 oneNum.addEventListener('click', writeOne);
 function writeOne() {
+    //when executed, the writeZero() function will check if 
+    //the amount of characters in the display surpasses nine,
+    //if it does, it'll lock all number buttons by calling the lockCalc() function.
+    if (display.textContent.length > 9) {
+        lockCalc()
+    }
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 1;
     //otherwise, it'll add a 1 to the display string.
     display.textContent === '0' || display.textContent == 'error' ? 
@@ -69,6 +169,12 @@ function writeOne() {
 //when clicking the 'two' button, it'll execute the 'writeTwo' function
 twoNum.addEventListener('click', writeTwo);
 function writeTwo() {
+    //when executed, the writeZero() function will check if 
+    //the amount of characters in the display surpasses nine,
+    //if it does, it'll lock all number buttons by calling the lockCalc() function.
+    if (display.textContent.length > 9) {
+        lockCalc()
+    }
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 2;
     //otherwise, it'll add a 2 to the display string.
     display.textContent === '0' || display.textContent == 'error' ? 
@@ -79,6 +185,12 @@ function writeTwo() {
 //when clicking the 'three' button, it'll execute the 'writeThree' function
 threeNum.addEventListener('click', writeThree);
 function writeThree() {
+    //when executed, the writeZero() function will check if 
+    //the amount of characters in the display surpasses nine,
+    //if it does, it'll lock all number buttons by calling the lockCalc() function.
+    if (display.textContent.length > 9) {
+        lockCalc()
+    }
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 3;
     //otherwise, it'll add a 3 to the display string.
     display.textContent === '0' || display.textContent == 'error' ? 
@@ -89,6 +201,12 @@ function writeThree() {
 //when clicking the 'four' button, it'll execute the 'writeFour' function
 fourNum.addEventListener('click', writeFour);
 function writeFour() {
+    //when executed, the writeZero() function will check if 
+    //the amount of characters in the display surpasses nine,
+    //if it does, it'll lock all number buttons by calling the lockCalc() function.
+    if (display.textContent.length > 9) {
+        lockCalc()
+    }
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 4;
     //otherwise, it'll add a 4 to the display string.
     display.textContent === '0' || display.textContent == 'error' ? 
@@ -99,6 +217,12 @@ function writeFour() {
 //when clicking the 'five' button, it'll execute the 'writeFive' function
 fiveNum.addEventListener('click', writeFive);
 function writeFive() {
+    //when executed, the writeZero() function will check if 
+    //the amount of characters in the display surpasses nine,
+    //if it does, it'll lock all number buttons by calling the lockCalc() function.
+    if (display.textContent.length > 9) {
+        lockCalc()
+    }
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 5;
     //otherwise, it'll add a 5 to the display string.
     display.textContent === '0' || display.textContent == 'error' ? 
@@ -109,6 +233,12 @@ function writeFive() {
 //when clicking the 'six' button, it'll execute the 'writeSix' function
 sixNum.addEventListener('click', writeSix);
 function writeSix() {
+    //when executed, the writeZero() function will check if 
+    //the amount of characters in the display surpasses nine,
+    //if it does, it'll lock all number buttons by calling the lockCalc() function.
+    if (display.textContent.length > 9) {
+        lockCalc()
+    }
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 6;
     //otherwise, it'll add a 6 to the display string.
     display.textContent === '0' || display.textContent == 'error' ? 
@@ -119,6 +249,12 @@ function writeSix() {
 //when clicking the 'seven' button, it'll execute the 'writeSeven' function
 sevenNum.addEventListener('click', writeSeven);
 function writeSeven() {
+    //when executed, the writeZero() function will check if 
+    //the amount of characters in the display surpasses nine,
+    //if it does, it'll lock all number buttons by calling the lockCalc() function.
+    if (display.textContent.length > 9) {
+        lockCalc()
+    }
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 7;
     //otherwise, it'll add a 7 to the display string.
     display.textContent === '0' || display.textContent == 'error' ? 
@@ -129,6 +265,12 @@ function writeSeven() {
 //when clicking the 'eight' button, it'll execute the 'writeEight' function
 eightNum.addEventListener('click', writeEight);
 function writeEight() {
+    //when executed, the writeZero() function will check if 
+    //the amount of characters in the display surpasses nine,
+    //if it does, it'll lock all number buttons by calling the lockCalc() function.
+    if (display.textContent.length > 9) {
+        lockCalc()
+    }
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 8;
     //otherwise, it'll add a 8 to the display string.
     display.textContent === '0'|| display.textContent == 'error' ? 
@@ -139,6 +281,12 @@ function writeEight() {
 //when clicking the 'nine' button, it'll execute the 'writeNine' function
 nineNum.addEventListener('click', writeNine);
 function writeNine() {
+    //when executed, the writeZero() function will check if 
+    //the amount of characters in the display surpasses nine,
+    //if it does, it'll lock all number buttons by calling the lockCalc() function.
+    if (display.textContent.length > 9) {
+        lockCalc()
+    }
     //if the calc screen is displaying 0 or 'error', it'll substitute it for 9;
     //otherwise, it'll add a 9 to the display string.
     display.textContent === '0' || display.textContent == 'error' ? 
